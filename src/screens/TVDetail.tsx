@@ -22,6 +22,7 @@ import {useTVById} from '../hooks/useTVShows';
 import TVReviews from '../components/Detail/TVReviews';
 import TVCast from '../components/Detail/TVCast';
 import {useDispatch, useSelector} from 'react-redux';
+import FastImage from 'react-native-fast-image';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -78,24 +79,26 @@ const TVDetail = () => {
         />
         <Box h="full" backgroundColor="white">
           <Box bg="gray.700">
-            <Image
+            <FastImage
+              style={{
+                width: '100%',
+                height: 170,
+                borderBottomLeftRadius: 15,
+                borderBottomRightRadius: 15,
+                opacity: 0.5,
+              }}
               source={{
                 uri: getImageUrl(backdrop_path),
+                priority: FastImage.priority.high,
               }}
-              alt={title}
-              size="xl"
-              borderBottomRadius={10}
-              w="full"
-              h="170"
-              minH="170"
-              opacity="0.5"
+              resizeMode={FastImage.resizeMode.cover}
             />
           </Box>
           <Box px="5">
             <HStack space="4" alignItems="center">
               <PosterCard
-                width="120"
-                height="150"
+                width="130"
+                height="180"
                 marginTop="-50%"
                 poster_path={poster_path}
                 id={id}

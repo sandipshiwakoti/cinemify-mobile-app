@@ -3,6 +3,7 @@ import {Image} from 'native-base';
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
 import {getImageUrl} from '../../config/utils';
+import FastImage from 'react-native-fast-image';
 
 interface PosterCardProps {
   id: number;
@@ -11,28 +12,30 @@ interface PosterCardProps {
   handlePress: () => void;
   width: string;
   height: string;
+  marginTop?: string;
 }
 
 const PosterCard: React.FC<PosterCardProps> = ({
-  id,
-  title,
+  width,
+  height,
+  marginTop,
   poster_path,
   handlePress,
-  ...props
 }) => {
   return (
     <TouchableOpacity onPress={handlePress}>
-      <Image
+      <FastImage
+        style={{
+          width: width ? Number(width) : 150,
+          height: height ? Number(height) : 220,
+          borderRadius: 15,
+          marginTop: marginTop,
+        }}
         source={{
           uri: getImageUrl(poster_path),
+          priority: FastImage.priority.high,
         }}
-        alt={title || 'Poster'}
-        size="xl"
-        borderRadius={10}
-        fallbackSource={{
-          uri: 'https://www.w3schools.com/css/img_lights.jpg',
-        }}
-        {...props}
+        resizeMode={FastImage.resizeMode.contain}
       />
     </TouchableOpacity>
   );
