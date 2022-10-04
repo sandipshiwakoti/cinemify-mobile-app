@@ -1,4 +1,5 @@
 import React from 'react';
+import SplashScreen from 'react-native-splash-screen';
 import {Box, Heading, ScrollView, Text} from 'native-base';
 import SearchBar from '../components/common/SearchBar';
 import FeaturedSlider from '../components/home/FeaturedSlider';
@@ -8,6 +9,10 @@ import PopularTVShowsSlider from '../components/home/PopularTVShowsSlider';
 import TrendingTVShowsSlider from '../components/home/TrendingTVShowsSlider';
 
 const Home = () => {
+  React.useEffect(() => {
+    SplashScreen.hide();
+  });
+
   return (
     <Box safeArea px="5" backgroundColor="white">
       <ScrollView contentContainerStyle={{flexGrow: 1}}>
