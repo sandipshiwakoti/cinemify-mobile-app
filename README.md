@@ -11,3 +11,5 @@ Major Tools used:
 - React Persist
 - React Native Vector Icons
 - React Native SVG
+
+Inspired from: [Figma Design](https://www.figma.com/file/cgMoPdGlWmMAF6t8iswWlf/Movies-app-(Community)?node-id=0%3A1)
