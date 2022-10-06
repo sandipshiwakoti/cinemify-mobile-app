@@ -13,3 +13,5 @@ Major Tools used:
 - React Native SVG
 
 Inspired from: [Figma Design](https://www.figma.com/file/cgMoPdGlWmMAF6t8iswWlf/Movies-app-(Community)?node-id=0%3A1)
+
+Web version: [Cinemify Website](https://cinemify.vercel.app/)
